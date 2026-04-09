@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Espaço Diniz 💕</title>
+  <link rel="stylesheet" href="assest/index.css"
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+  
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 10px auto;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    img {
+      width: 200px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      margin-bottom: 20px;
+    }
+
+    .hearts-left,
+    .hearts-right {
+      position: fixed;
+      top: 0;
+      width: 60px;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hearts-left { left: 0; }
+    .hearts-right { right: 0; }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      color: #f7f7f2;
+      font-size: 20px;
+      opacity: 0;
+      animation: floatUp 6s linear forwards;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(0.8); opacity: 0; }
+      10% { opacity: 1; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts-left"></div>
+  <div class="hearts-right"></div>
+
+  <main>
+  
+    <img src="./assest/img/imagem1.jpeg" alt="Espaço Diniz" />
+    
+   <p>
+<a href="http://wa.me/5581998040373">
+  <button>AGENDAR</button>
+</a> </p>
+<p><a href="http://wa.me/5581998724783">
+  <button>Quero ser aluno/informações</button>
+</a>  </p>
+<br>
+<br>
+<br>
+<br>
+<p><a href="https://maps.app.goo.gl/ycMkk8ccLpVxs9Rg8?g_st=aw">
+  <button>Localização</button>
+</a>  </p>    </h3>
+    
+  </main>
+
+  <script>
+    const leftContainer = document.querySelector('.hearts-left');
+    const rightContainer = document.querySelector('.hearts-right');
+
+    function createHeart(container) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '❤';
+
+      heart.style.left = `${Math.random() * 40 + 10}px`;
+      heart.style.fontSize = `${Math.random() * 10 + 15}px`;
+      heart.style.animationDuration = `${Math.random() * 3 + 4}s`;
+
+      container.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(() => createHeart(leftContainer), 600);
+    setInterval(() => createHeart(rightContainer), 600);
+  </script>
+</body>
+</html>
