@@ -41,3 +41,22 @@ button:active {
 
 
 }
+
+.heart {
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  color: black !important;
+  text-decoration: none !important;
+}
+
+a:visited {
+  color: black !important;
+}
+
+a:active, a:hover {
+  color: black !important;
+}
+
